@@ -18,16 +18,16 @@
       const { index } = JSON.parse(d);
 
       if (index === 0) {
-        reset()
+        reset();
       } else if (index === 1) {
         current_Step.set(index);
       }
 
-      
+      console.log("pymchild has received a message");
 
     });
 
-     console.log(index)
+     console.log("this is onmount firing");
   })
 
 
@@ -41,7 +41,7 @@
     number.set(300);
   } 
 
-
+console.log("this is the script section of the +svelte page");
 
 </script>
 
