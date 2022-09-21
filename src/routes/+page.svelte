@@ -28,7 +28,7 @@
         console.log(index);
       }*/
 
-      index = current_Step;
+      current_Step = index;
 
       console.log("pymchild has received a message. the index is...");
       console.log(index);
