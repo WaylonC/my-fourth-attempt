@@ -18,7 +18,8 @@
       const { index } = JSON.parse(d);
 
       if (index === 0) {
-    
+
+        reset();
         console.log("pymchild has received a message. the index was 0");
         console.log(index);
       } else if (index === 1) {
