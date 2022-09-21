@@ -55,6 +55,9 @@
 <section>
   <Scrolly bind:value={currentStep}>
 
+    <br>
+    <br>
+
     <div class='sticky'>{Math.round($number)}</div>
   
   </Scrolly> 
