@@ -15,12 +15,16 @@
 
     pymChild.onMessage('set', (d) => {
       
-      const { index } = JSON.parse(d)
+      const { index } = JSON.parse(d);
 
       current_Step.set(index);
+
+      reset();
       
 
     });
+
+     console.log(index)
   })
 
 
