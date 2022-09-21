@@ -57,6 +57,10 @@
 
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     <div class='sticky'>{Math.round($number)}</div>
   
