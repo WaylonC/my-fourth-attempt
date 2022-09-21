@@ -3,7 +3,7 @@
 
   import { tweened } from "svelte/motion";
 
-  //import { PymChild } from "pym";
+  import { onMount } from 'svelte';
 
 
 
@@ -18,7 +18,31 @@
     number.set(200);
   } else if (currentStep == 2) {
     number.set(300);
-  }  
+  } 
+
+  onMount(() => {
+
+    pymChild = new pym.Child();
+
+    pymChild.onMessage('set', (d) => {
+      
+      const { index } = JSON.parse(d)
+      
+      if (index === 0) {
+        reset()
+      } else if (index === 1) {
+        setToInflationAdjustedFullData()
+      }
+
+    });
+
+
+
+
+  })
+
+
+
 
 </script>
 

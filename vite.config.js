@@ -10,9 +10,6 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 
 const config = {
-	optimizeDeps: {
-		include: ['pym.js'],
-	  },
 	plugins: [sveltekit()],
 };
 
