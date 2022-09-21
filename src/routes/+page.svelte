@@ -17,12 +17,20 @@
       
       const { index } = JSON.parse(d);
 
-      
+      if (index === 0) {
+        reset();
+        console.log("pymchild has received a message. the index was 0");
+        console.log(index);
+      } else if (index === 1) {
+        current_Step.set(index);
+        console.log("pymchild has received a message. the index is...");
+        console.log(index);
+      }
 
-      current_Step.set(index);
+      //current_Step.set(index);
 
-      console.log("pymchild has received a message. the index is...");
-      console.log(index);
+      //console.log("pymchild has received a message. the index is...");
+      //console.log(index);
 
     });
 
