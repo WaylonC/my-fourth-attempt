@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
@@ -7,9 +9,17 @@
 		%sveltekit.head%
 	</head>
 	<body>
+		
+		
 		<div>%sveltekit.body%</div>
 
 		<script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+		
+		<script>
+			var pymChild = new pym.Child({
+				polling: 200
+			});
+		</script>
 		
 
 		
