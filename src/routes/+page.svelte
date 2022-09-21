@@ -1,25 +1,14 @@
 <script>
-  import Scrolly from "./Scrolly.svelte";
 
   import { tweened } from "svelte/motion";
 
   import { onMount } from 'svelte';
 
+ 
 
+  let current_Step;
 
-
-  let number = tweened(0);
-
-  let currentStep;
-
-  $: if (currentStep == 0) {
-    number.set(100);
-  } else if (currentStep == 1) {
-    number.set(200);
-  } else if (currentStep == 2) {
-    number.set(300);
-  } 
-
+  
   onMount(() => {
 
     pymChild = new pym.Child();
@@ -27,20 +16,23 @@
     pymChild.onMessage('set', (d) => {
       
       const { index } = JSON.parse(d)
+
+      current_Step.set(index);
       
-      if (index === 0) {
-        reset()
-      } else if (index === 1) {
-        setToInflationAdjustedFullData()
-      }
 
     });
-
-
-
-
   })
 
+
+  let number = tweened(0);
+
+  $: if (current_Step == 0) {
+    number.set(100);
+  } else if (current_Step == 1) {
+    number.set(200);
+  } else if (current_Step == 2) {
+    number.set(300);
+  } 
 
 
 
@@ -53,18 +45,16 @@
 
 
 <section>
-  <Scrolly bind:value={currentStep}>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
-    <div class='sticky'>{Math.round($number)}</div>
+  <div class='sticky'>{Math.round($number)}</div>
   
-  </Scrolly> 
 
 
 </section>
