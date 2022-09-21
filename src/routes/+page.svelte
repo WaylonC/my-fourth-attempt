@@ -18,6 +18,7 @@
       const { index } = JSON.parse(d);
 
       if (index === 0) {
+        console.log("onmount fired and we found it was 0");
         reset();
       } else if (index === 1) {
         current_Step.set(index);
