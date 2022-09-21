@@ -17,9 +17,12 @@
       
       const { index } = JSON.parse(d);
 
-      current_Step.set(index);
+      if (index === 0) {
+        reset()
+      } else if (index === 1) {
+        current_Step.set(index);
+      }
 
-      reset();
       
 
     });
